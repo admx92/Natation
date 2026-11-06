@@ -378,7 +378,14 @@ def chercher_limite_ffn(
 # INTERFACE PRINCIPALE : COTATION FFN
 # ==================================================
 
-st.title("🏊 Chrono Natation")
+col1, col2 = st.columns([1, 7], vertical_alignment="center")
+
+with col1:
+    st.image("icon.png", width="stretch")
+
+with col2:
+    st.title("Chrono Natation")
+    
 st.caption("Cotation fédérale FFN")
 
 # Sexe
