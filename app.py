@@ -378,14 +378,52 @@ def chercher_limite_ffn(
 # INTERFACE PRINCIPALE : COTATION FFN
 # ==================================================
 
-col1, col2 = st.columns([1, 7], vertical_alignment="center")
 
-with col1:
-    st.image("icon.png", width="stretch")
 
-with col2:
-    st.title("Chrono Natation")
-    
+import base64
+
+with open("icon.png", "rb") as f:
+    icone = base64.b64encode(f.read()).decode()
+
+
+st.markdown(
+    f"""
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 24px;
+        padding-bottom: 12px;
+        min-height: 90px;
+        box-sizing: border-box;
+        overflow: visible;
+    ">
+        <img
+            src="data:image/png;base64,{icone}"
+            style="
+                width: 44px;
+                height: 44px;
+                object-fit: contain;
+                flex-shrink: 0;
+                display: block;
+            "
+        >
+        <div style="
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 750;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+        ">
+            Chrono Natation
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 st.caption("Cotation fédérale FFN")
 
 # Sexe
