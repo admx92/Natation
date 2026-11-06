@@ -9,7 +9,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Chrono Natation",
-    page_icon="🏊",
+    page_icon="icon.png",
     layout="centered"
 )
 
